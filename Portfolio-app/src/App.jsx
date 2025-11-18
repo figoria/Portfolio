@@ -1,8 +1,11 @@
 import './App.css'
 import foto from "./assets/images/foto.png"
+import {useNavigate} from "react-router-dom";
 
 
 function App() {
+    const navigate = useNavigate();
+
     const slowScrollTo = (id, duration = 1000) => {
         const target = document.getElementById(id);
         if (!target) return;
@@ -46,8 +49,14 @@ function App() {
 
             <section className="hero">
                 <div className="hero-text">
-                    <h1 className="name">Sam<br />Bijkerk</h1>
+                    <h1 className="name">Sam<br/>Bijkerk</h1>
                     <p className="subtitle">Creative developer</p>
+                </div>
+                <div className="hero-background">
+                    <span className="shape shape1"></span>
+                    <span className="shape shape2"></span>
+                    <span className="shape shape3"></span>
+                    <span className="shape shape4"></span>
                 </div>
             </section>
 
@@ -66,10 +75,12 @@ function App() {
             </section>
 
             <section className="projects" id="projects">
-                <div className="project project1"></div>
-                <div className="project project2"></div>
-                <div className="project project3"></div>
-                <div className="project project4"></div>
+                <div className="project project1" onClick={() => navigate("/project/1")}>
+                    <h3> Huiswerk weekplanner</h3>
+                </div>
+                <div className="project project2" onClick={() => navigate("/project/2")}></div>
+                <div className="project project3" onClick={() => navigate("/project/3")}></div>
+                <div className="project project4" onClick={() => navigate("/project/4")}></div>
             </section>
 
             <section className="contact" id="contact">
@@ -93,4 +104,4 @@ function App() {
     );
 }
 
-export default App
+export default App;
