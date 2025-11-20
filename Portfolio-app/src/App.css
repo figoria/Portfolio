@@ -22,8 +22,9 @@ body {
 /* NAVBAR */
 .navbar {
   display: flex;
-  gap: 25px;
+  gap: 35px;
   padding-bottom: 40px;
+  justify-content: center;
 }
 
 .navbar button {
@@ -39,12 +40,24 @@ body {
   background-color: #5A3C92;
 }
 
+button:focus {
+  outline:none;
+}
+
+button:focus-visible {
+  outline:none;
+}
+
+button:active {
+  outline:none;
+}
+
 /* HERO SECTION */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .hero-text .name {
@@ -59,28 +72,40 @@ body {
   color: #d4d4d4;
 }
 
-.hero-img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-}
-
 /* ABOUT */
 .about {
-  margin-top: 80px;
-  max-width: 600px;
+  margin-top: 140px;
+  margin: 80px auto 0 auto;
+  max-width: 800px;
 }
 
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text{
+  flex: 1;
+  text-align: left;
+}
 .about h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
+.about-img {
+  width: 160px;
+  border-radius: 10px;
+}
+
 /* COLORED BLOCKS */
 .projects {
-  margin-top: 80px;
+  margin-top: 140px;
   display: flex;
   gap: 40px;
+  justify-content: center;
 }
 
 .project {
@@ -104,14 +129,18 @@ body {
 
 /* CONTACT SECTION */
 .contact {
-  margin-top: 100px;
+  margin-top: 180px;
   max-width: 600px;
+  margin: 100px auto 0 auto;
+  text-align: left;
+  padding-bottom: 200px;
 }
 
 .socials {
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .icon {
