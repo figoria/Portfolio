@@ -54,10 +54,44 @@ button:active {
 
 /* HERO SECTION */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
   margin-top: 120px;
+
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
+  opacity: 0;
+  filter: blur(25px);
+  animation: fadeIn 1.5s ease forwards, float 10s infinite ease-in-out;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.shape1 { background: #ffddb9; top: -5px; left: -10px; }
+.shape2 { background: #e2ffd5; bottom: -40px; left: 30%; animation-delay: 1s; }
+.shape4 { background: #b8f5ff; bottom: 0; right: 10%; animation-delay: 2s; }
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 0.55; transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(20px); }
+  100% { transform: translateY(0) translateX(0); }
 }
 
 .hero-text .name {
@@ -83,7 +117,7 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 25px;
 }
 
 .about-text{
@@ -92,7 +126,6 @@ button:active {
 }
 .about h2 {
   font-size: 20px;
-  margin-bottom: 10px;
 }
 
 .about-img {
@@ -111,6 +144,11 @@ button:active {
 .project {
   width: 200px;
   height: 200px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Kleuren */
@@ -123,29 +161,36 @@ button:active {
 .project3 {
   background: linear-gradient(135deg, #b8f5ff, #5bc8d7);
 }
-.project4 {
-  background: linear-gradient(135deg, #d6b5ac, #a03628);
+
+h3{
+  color: #000000;
 }
 
 /* CONTACT SECTION */
 .contact {
-  margin-top: 180px;
+  margin-top: 140px;
   max-width: 600px;
   margin: 100px auto 0 auto;
   text-align: left;
   padding-bottom: 200px;
 }
 
+.cv-en-iconen-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 20px;
+}
+
 .socials {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
-  background: #ffffff;
+  width: 30px;
+  height: 30px;
   border-radius: 4px;
+  cursor: pointer;
 }
