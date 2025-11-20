@@ -71,7 +71,6 @@ function App() {
             </section>
 
             <section className="contact" id="contact">
-                <h2>Contact</h2>
                 <div className="cv-en-iconen-container">
                     <a className="document" href={pdfUrl} target="_blank" rel="noopener noreferrer">
                         <img src={CV} alt="PDF preview" style={{ width: "150px", cursor: "pointer", display: "block" }} />
