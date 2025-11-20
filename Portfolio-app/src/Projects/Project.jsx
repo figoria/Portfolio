@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { projects } from "./Projects.js";
 import { SlowScroll } from "../slowScroll.jsx";
 import './project.css'
+import github from "../assets/icons/github.png"
 
 function Project() {
     const navigate = useNavigate();
@@ -13,38 +14,35 @@ function Project() {
     return (
         <div className="project-container">
 
-            {/* NAVIGATION */}
             <nav className="project-navbar">
                 <button onClick={() => navigate("/")}>Home</button>
                 <button onClick={() => SlowScroll("description", 1100)}>Opdracht</button>
-                <button onClick={() => SlowScroll("techniques", 1100)}>Tools</button>
                 <button onClick={() => SlowScroll("imagery", 1100)}>Uitwerking</button>
+                <button onClick={() => SlowScroll("link", 1100)}>link</button>
             </nav>
 
-            {/* TITLE */}
-            <header className="project-header">
+            <header className="hero">
                 <h1>{project.title}</h1>
+                <div className="hero-background">
+                    <span className="shape shape1"></span>
+                    <span className="shape shape2"></span>
+                    <span className="shape shape3"></span>
+                </div>
             </header>
 
-            {/* DESCRIPTION */}
-            <section id="description" className="project-section description-section">
-                <p>{project.description}</p>
-            </section>
+            <div className="project-content">
+                    <p id="description"> {project.description}</p>
 
-            {/* SKILLS */}
-            <section id="techniques" className="project-section techniques-section">
-                <h2>Tools / technieken</h2>
-                <ul>
-                    {project.skills.map((skill, index) => (
-                        <li key={index}>{skill}</li>
-                    ))}
-                </ul>
-            </section>
+                    <h2>Tools / technieken</h2>
 
-            {/* IMAGERY AREA */}
+                    <ul>
+                        {project.skills.map((skill, index) => (
+                            <li key={index}>{skill}</li>
+                        ))}
+                    </ul>
+            </div>
+
             <section id="imagery" className="project-section imagery-section">
-
-                {/* VIDEO BLOCK (only if exists) */}
                 {project.video && (
                     <div className="project-video-wrapper">
                         <video controls>
@@ -53,24 +51,25 @@ function Project() {
                     </div>
                 )}
 
-                {/* IMAGE BLOCK (only if exists) */}
                 {project.image && (
                     <div className="project-image-wrapper">
                         <img src={project.image} alt={project.title} />
                     </div>
                 )}
+            </section>
 
-                {/* GITHUB (optional) */}
-                {project.link && (
-                    <div className="github-link">
-                        <p>Link naar project</p>
-                        <a href={project.link} target="_blank" rel="noreferrer">
-                            <i className="fa-brands fa-github"></i>
-                        </a>
+                {project.links && (
+                    <div className="project-links" id="link">
+                        <h2>Bekijk de code</h2>
+                        {project.links.map((link, index) =>(
+                            <a key={index} href={link.url} target="_blank" rel="noreferrer" className="project-link">
+                                {link.label}
+                            </a>
+                        ))}
                     </div>
                 )}
 
-            </section>
+
 
         </div>
     );

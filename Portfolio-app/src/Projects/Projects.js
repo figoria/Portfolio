@@ -15,7 +15,9 @@ export const projects = [
             "Ik heb hiervoor de Standby-modus en de weekview gemaakt. Voor de front end hebben we HTML/CSS en JavaScript gebruikt. Voor de back end gebruikten we Python. \n ",
         video: sem6Vid,
         image: sem6Img,
-        link: 'https://github.com/Karinaax/InnoVision',
+        links: [
+            {label: "Github", url: "https://github.com/Karinaax/InnoVision"},
+        ],
         skills: ["HTML", "CSS", "JavaScript", "Python"],
     },
     {
@@ -24,7 +26,6 @@ export const projects = [
         description: "Tijdens mijn meeloopstage in het derde jaar heb ik bij ASRR gewerkt aan een digitale 3D-maquette maker. Het was de bedoeling dat bouwbedrijven hierin dan bijvoorbeeld nieuwe wijken in konden ontwerpen. Het project had al een basis, maar ik was verantwoordelijk voor het uitbreiden van de functionaliteiten. Zo heb ik onder andere een model van een straat gemaakt, waarbij de gebruiker kon kiezen voor varianten mét of zonder fietspad en stoep. Ook heb ik gewerkt aan de zonposities, zodat de gebruiker de stand van de zon kan aanpassen op basis van tijd. Dit was onder andere belangrijk vanwege de invloed van de zon op zonnepanelen.  \n" +
             "Ik werkte met React en TypeScript, en maakte gebruik van React Three Fiber om 3D-scenes declaratief te bouwen in de browser. Hierbij gebruikte ik ook helpers zoals React-Three Drei voor kant en klare componenten, post processing effecten en Leva voor realtime controls en debugging.\n",
         image: stageImg,
-        link: 'https://github.com/figoria/sandwiches-react-frontend',
         skills: ["React", "TypeScript", "React-Three-Fiber"],
     },
     {
@@ -34,6 +35,10 @@ export const projects = [
             "Daarnaast ontwikkelde ik een frontend applicatie in React die via de Fetch API communiceerde met mijn backend. Hierbij implementeerde ik frontend routing, CRUD-operaties en werkte ik met belangrijke webconcepten zoals CORS en JSON Web Tokens voor beveiliging. \n" +
             "Ik heb een applicatie gemaakt waar mensen broodjes in Rotterdam kunnen reviewen. Je kan je eigen toevoegen, aanpassen en verwijderen. De opdracht draaide vooral om de functionaliteiten, dus in de styling heeft niet heel veel tijd gezeten.\n",
         video: fullVid,
+        links: [
+            {label: "frontend repo", url: "https://github.com/figoria/sandwiches-react-frontend"},
+            {label: "backend repo", url: "https://github.com/figoria/sandwiches-express-webservice"}
+        ],
         skills: ["React", "Tailwind CSS", "Express", "MongoDB"],
     },
 ];
